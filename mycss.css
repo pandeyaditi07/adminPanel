@@ -1,0 +1,32 @@
+.login-form{ 
+    margin: auto;
+    text-align: center; 
+    border: 1ps solid black; 
+    background-color: white; 	; 
+    /* height: 500px;  */
+    height: 489px;
+    width: 41%; 
+    margin-top: 8%; 
+    box-shadow: 8px 8px 5px 8px #D3D3D3; 
+    
+} 
+
+.btn{
+    /* padding: 12px;  */
+    padding: 8px;
+    width: 70%; 
+    font-size: 20px; 
+    font-family: Arial, Helvetica, sans-serif;
+} 
+.TextEnter{
+    padding: 8px;
+    width: 70%; 
+    font-size: 20px; 
+    font-family: Arial, Helvetica, sans-serif;
+
+} 
+.header{ 
+    background-color: #204969;  
+    padding: 15px;
+
+}

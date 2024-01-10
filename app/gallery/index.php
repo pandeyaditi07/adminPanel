@@ -46,7 +46,7 @@ include $Dir . "config.php";  ?>
                         echo "<h4> " . $_SESSION['status'] . "</h4>";
                         unset($_SESSION['status']);
                     }
-                    ?> 
+                    ?>
 
 
                     <table class="table">
@@ -56,19 +56,19 @@ include $Dir . "config.php";  ?>
                                 <th>galleryTitle</th>
                                 <th>galleryImg</th>
                                 <th>galleryDescription</th>
-                                <th data-type="date" data-format="YYYY/DD/MM">CreatedAt</th> 
+                                <th data-type="date" data-format="YYYY/DD/MM">CreatedAt</th>
                                 <th data-type="date" data-format="YYYY/DD/MM">UpdatedAt</th>
                                 <th>Status</th>
                                 <th>Action</th>
                             </tr>
-                        </thead> 
+                        </thead>
                         <tbody>
                             <?php
                             $query = "SELECT * FROM gallery";
                             $query_run = mysqli_query($conn,   $query);
                             if (mysqli_num_rows($query_run) > 0) {
                                 foreach ($query_run as $data) {
-                            ?> 
+                            ?>
 
 
                                     <tr>
@@ -76,24 +76,24 @@ include $Dir . "config.php";  ?>
                                         <td><?php echo $data['gallery_title'] ?></td>
                                         <td><?php echo $data['gallery_images'] ?></td>
                                         <td><?php echo $data['gallery_description'] ?></td>
-                                        <td><?php echo $data['gallery_Created_At'] ?></td>  
-                                        <td><?php echo $data['updated_At'] ?></td>   
+                                        <td><?php echo $data['gallery_Created_At'] ?></td>
+                                        <td><?php echo $data['updated_At'] ?></td>
 
                                         <td><?php if ($data['gallery_status'] == 0) {
                                                 echo "<button style='background-color: rgb(40,167,69); border-radius:8px;'>Active</button>";
                                             } else {
                                                 echo "<button style='background-color: rgb(220,53,69); border-radius:8px;'>InActive</button>";
-                                            } ?></td>  
+                                            } ?></td>
 
-                                        <td> 
+                                        <td>
                                             <i class="bi bi-eye-fill" style="background-color: black; padding:3px; color:white;"></i>
                                             <i class="bi bi-pencil-square" style="background-color: rgb(23,162,184); color:white; padding: 3px;" data-bs-toggle="modal" data-bs-target="#Update_gallery_<?php echo $data['gallery_id'] ?>"></i>
 
                                             <form action="../crud/delete.php" method="POST">
                                                 <button type="submit" name="gallery_delete_btn" value="<?php echo $data['gallery_id']; ?>" class='btn btn-sm btn-danger mt-1'><i class="bi bi-trash-fill"></i> </button>
-                                            </form>  
+                                            </form>
 
-                                    
+
 
                                             <form action="../crud/update.php" method="POST" enctype="multipart/form-data">
                                                 <div class="row">
@@ -102,7 +102,7 @@ include $Dir . "config.php";  ?>
                                                             <div class="modal-dialog">
                                                                 <div class="modal-content">
                                                                     <div class="modal-header">
-                                                                        <h5 class="modal-title" id="">Update gallery</h5> 
+                                                                        <h5 class="modal-title" id="">Update gallery</h5>
                                                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                                     </div>
                                                                     <div class="modal-body">
@@ -151,14 +151,14 @@ include $Dir . "config.php";  ?>
                                                                     </div>
                                                                     <div class="modal-footer">
                                                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                                                        <button type="submit" value='<?php echo $data["gallery_id"]; ?>' name="updategallery" class="btn btn-primary">Updategallery</button>
+                                                                        <button type="submit" value='<?php echo $data["gallery_id"]; ?>' name="updategallery" class="btn btn-primary">Updatesgallery</button>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </form>  
+                                            </form>
                                         </td>
                                     </tr>
                                 <?php
@@ -171,7 +171,7 @@ include $Dir . "config.php";  ?>
 
                             <?php
                             }
-                            ?> 
+                            ?>
                         </tbody>
                     </table>
                 </div>
@@ -240,7 +240,8 @@ include $Dir . "config.php";  ?>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="submit" name="Creategallery" class="btn btn-primary">UpdategALLERY</button>
+                                <button type="submit" name="Creategallery" class="btn btn-primary">CreateGallery</button>
+
                             </div>
                         </div>
                     </div>
